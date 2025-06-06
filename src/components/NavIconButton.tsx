@@ -30,9 +30,9 @@ const NavIconButton: React.FC<NavIconButtonProps> = ({
       onClick={handleClick}
       title={text}
     >
-      <button className="w-full flex items-center justify-start px-2 py-1 hover:bg-transparent rounded-none">
+      <button className="w-full flex items-center justify-start px-6 py-1 hover:bg-transparent rounded-none">
         <div className="pr-2">{icon}</div>
-        <div>{text}</div>
+        <div className="text-lg">{text}</div>
       </button>
     </div>
   );
