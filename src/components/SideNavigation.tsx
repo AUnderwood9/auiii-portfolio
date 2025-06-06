@@ -1,13 +1,21 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import JavascriptOriginalIcon from 'react-devicons/javascript/original';
 import NavIconButton from './NavIconButton';
+import { NavigationRoute } from '../routes/routes';
 
 interface SideNavigationProps {
   className?: string;
+  routes: NavigationRoute[];
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-const SideNavigation: React.FC<SideNavigationProps> = ({ className = '' }) => {
+const SideNavigation: React.FC<SideNavigationProps> = ({ 
+  className = '', 
+  routes, 
+  isOpen = false, 
+  onClose 
+}) => {
   const location = useLocation();
 
   const isActive = (path: string) => {
@@ -15,21 +23,32 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ className = '' }) => {
   };
 
   return (
-    <div className={`bg-gray-800 text-white w-48 flex flex-col py-2 ${className}`}>
-      <NavIconButton 
-        icon={<JavascriptOriginalIcon />} 
-        text="Home" 
-        path="/"
-        isActive={isActive('/')}
-      />
+    <>
+      {isOpen && (
+        <div 
+          className="md:hidden fixed left-0 right-0 top-16 bottom-0 bg-black bg-opacity-50 z-40"
+          onClick={onClose}
+        />
+      )}
       
-      <NavIconButton 
-        icon={<JavascriptOriginalIcon />} 
-        text="About" 
-        path="/about"
-        isActive={isActive('/about')}
-      />
-    </div>
+      <div className={`
+        bg-gray-800 text-white w-48 flex flex-col py-2 z-50
+        md:relative md:translate-x-0 md:h-auto
+        fixed left-0 h-full transition-transform duration-300 ease-in-out
+        ${isOpen ? 'translate-x-0 top-16' : '-translate-x-full'}
+        ${className}
+      `}>
+        {routes.map((route) => (
+          <NavIconButton 
+            key={route.path}
+            icon={route.icon} 
+            text={route.text} 
+            path={route.path}
+            isActive={isActive(route.path)}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -8,7 +8,12 @@ interface NavIconButtonProps {
   isActive?: boolean;
 }
 
-const NavIconButton: React.FC<NavIconButtonProps> = ({ icon, text, path, isActive = false }) => {
+const NavIconButton: React.FC<NavIconButtonProps> = ({ 
+  icon, 
+  text, 
+  path, 
+  isActive = false
+}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
