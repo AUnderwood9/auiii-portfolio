@@ -15,7 +15,7 @@ const MainDisplayPane: React.FC<MainDisplayPaneProps> = ({ routes, children }) =
 
   return (
     <div className="flex flex-col h-full bg-gray-900 text-white w-full">
-      <div className="bg-gray-800 border-b border-gray-700 flex items-center min-h-[35px] lg:pt-2">
+      <div className="bg-gray-800 border-b border-gray-700 flex items-center min-h-[35px] pr-2">
         {openTabs.length > 0 ? (
           <div className="flex">
             {openTabs.map((tab) => (
@@ -49,9 +49,8 @@ const MainDisplayPane: React.FC<MainDisplayPaneProps> = ({ routes, children }) =
             No file open
           </div>
         )}
-        
-        {/* Tab bar actions */}
-        <div className="ml-auto flex items-center pr-2">
+
+        <div className="ml-auto flex items-center">
           <button className="w-6 h-6 flex items-center justify-center rounded hover:bg-gray-700 text-gray-400 hover:text-white">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M7.5 7.5h-7v1h7v7h1v-7h7v-1h-7v-7h-1v7z"/>
@@ -60,7 +59,6 @@ const MainDisplayPane: React.FC<MainDisplayPaneProps> = ({ routes, children }) =
         </div>
       </div>
 
-      {/* Main Content Area */}
       <div className="flex-1 bg-gray-900 overflow-auto">
         {activeRoute ? (
           <div className="h-full">

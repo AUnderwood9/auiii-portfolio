@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
   return (
-    <header className="flex items-center bg-[#2d2d30] text-gray-300 h-8 p-8">
+    <header className="flex items-center bg-[#2d2d30] text-gray-300 h-8 p-8 pr-2">
       <div className="flex items-center justify-center">
         <HamburgerIcon 
           className="md:hidden" 
