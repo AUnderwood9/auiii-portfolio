@@ -1,10 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import MainDisplayPane from './MainDisplayPane';
 
 const meta = {
   component: MainDisplayPane,
+  decorators: [
+    (Story) => (
+      <Router>
+        <Story />
+      </Router>
+    ),
+  ],
 } satisfies Meta<typeof MainDisplayPane>;
 
 export default meta;
