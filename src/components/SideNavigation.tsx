@@ -32,7 +32,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({
       )}
       
       <div className={`
-        bg-gray-800 text-white w-48 md:w-64 flex flex-col lg:py-2 z-50
+        bg-gray-800 text-white w-48 md:w-64 flex flex-col lg:pt-2 z-50
         md:relative md:translate-x-0 md:h-auto
         fixed left-0 h-full transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0 top-16' : '-translate-x-full'}

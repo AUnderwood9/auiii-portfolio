@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes.tsx';
 import SideNavigation from './components/SideNavigation.tsx';
+import MainDisplayPane from './components/MainDisplayPane.tsx';
 import Header from './components/Header.tsx';
 import { navigationRoutes } from './routes/routes';
 
@@ -26,9 +27,9 @@ function App() {
             isOpen={isSidebarOpen}
             onClose={closeSidebar}
           />
-          <div className="flex-1 overflow-auto">
+          <MainDisplayPane routes={navigationRoutes}>
             <AppRoutes />
-          </div>
+          </MainDisplayPane>
         </div>
       </div>
     </Router>
