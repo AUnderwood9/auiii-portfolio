@@ -1,22 +1,20 @@
 import React from 'react';
-import { NavigationRoute } from '../routes/routes';
+import { useTabNavBar } from './TabNavBarContext';
+import { useLocation } from 'react-router-dom';
 
-interface TabNavBarProps {
-  tabs: NavigationRoute[];
-  onTabClose?: (tab: NavigationRoute) => void;
-  onTabClick?: (tab: NavigationRoute) => void;
-}
+const TabNavBar: React.FC = () => {
+  const { openTabs, closeTab, setActiveTab } = useTabNavBar();
+  const location = useLocation();
 
-const TabNavBar: React.FC<TabNavBarProps> = ({ tabs, onTabClose, onTabClick }) => {
   return (
     <div className="bg-gray-800 border-b border-gray-700 flex items-center min-h-[35px] pr-2">
-      {tabs.length > 0 ? (
+      {openTabs.length > 0 ? (
         <div className="flex">
-          {tabs.map((tab) => (
+          {openTabs.map((tab) => (
             <div
               key={tab.path}
-              className="bg-gray-700 border-r border-gray-600 px-3 py-2 flex items-center space-x-2 min-w-[120px] max-w-[200px] group hover:bg-gray-650 cursor-pointer"
-              onClick={() => onTabClick?.(tab)}
+              className={`border-r border-gray-600 px-3 py-2 flex items-center space-x-2 min-w-[120px] max-w-[200px] group hover:bg-gray-650 cursor-pointer ${location.pathname === tab.path ? 'bg-gray-600' : 'bg-gray-900'}`}
+              onClick={() => setActiveTab(tab)}
             >
               <div className="w-4 h-4 flex-shrink-0 flex items-center justify-center">
                 {React.isValidElement(tab.icon) ? tab.icon : (
@@ -32,7 +30,7 @@ const TabNavBar: React.FC<TabNavBarProps> = ({ tabs, onTabClose, onTabClick }) =
                 className="w-4 h-4 flex items-center justify-center rounded opacity-0 group-hover:opacity-100 hover:bg-gray-600 text-xs"
                 onClick={(e) => {
                   e.stopPropagation();
-                  onTabClose?.(tab);
+                  closeTab(tab);
                 }}
               >
                 x
