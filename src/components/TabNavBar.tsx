@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTabNavBar } from './TabNavBarContext';
 import { useLocation } from 'react-router-dom';
+import { DocumentIcon } from '@heroicons/react/24/outline';
+import { PlusIcon } from '@heroicons/react/24/outline';
 
 const TabNavBar: React.FC = () => {
   const { openTabs, closeTab, setActiveTab } = useTabNavBar();
@@ -18,9 +20,7 @@ const TabNavBar: React.FC = () => {
             >
               <div className="w-4 h-4 flex-shrink-0 flex items-center justify-center">
                 {React.isValidElement(tab.icon) ? tab.icon : (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M14 1H2c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM3 13V3h10v10H3z"/>
-                  </svg>
+                  <DocumentIcon className="w-4 h-4" />
                 )}
               </div>
               <span className="text-sm truncate flex-1">
@@ -46,9 +46,7 @@ const TabNavBar: React.FC = () => {
 
       <div className="ml-auto flex items-center">
         <button className="w-6 h-6 flex items-center justify-center rounded hover:bg-gray-700 text-gray-400 hover:text-white">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M7.5 7.5h-7v1h7v7h1v-7h7v-1h-7v-7h-1v7z"/>
-          </svg>
+          <PlusIcon className="w-4 h-4" />
         </button>
       </div>
     </div>
