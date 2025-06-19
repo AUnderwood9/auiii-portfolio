@@ -8,6 +8,7 @@ export interface NavigationRoute {
   text: string;
   icon: React.ReactNode;
   component: React.ComponentType;
+  isClosable?: boolean;
 }
 
 export const navigationRoutes: NavigationRoute[] = [
@@ -15,13 +16,15 @@ export const navigationRoutes: NavigationRoute[] = [
     path: '/',
     text: 'Home',
     icon: <JavascriptOriginalIcon />,
-    component: Home
+    component: Home,
+    isClosable: false
   },
   {
     path: '/about',
     text: 'About',
     icon: <JavascriptOriginalIcon />,
-    component: About
+    component: About,
+    isClosable: true
   }
 ];
 

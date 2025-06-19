@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
-import { NavigationRoute } from '../routes/routes';
+import { useNavigate } from 'react-router-dom';
+import { NavigationRoute, getRouteByPath } from '../routes/routes';
 
 interface TabNavBarContextType {
   openTabs: NavigationRoute[];
@@ -7,6 +8,7 @@ interface TabNavBarContextType {
   openTab: (tab: NavigationRoute) => void;
   closeTab: (tab: NavigationRoute) => void;
   setActiveTab: (tab: NavigationRoute) => void;
+  getTabIcon: (tab: NavigationRoute) => React.ReactNode;
 }
 
 const TabNavBarContext = createContext<TabNavBarContextType | undefined>(undefined);
@@ -27,6 +29,7 @@ interface TabNavBarProviderProps {
 export const TabNavBarProvider: React.FC<TabNavBarProviderProps> = ({ children, initialTabs = [] }) => {
   const [openTabs, setOpenTabs] = useState<NavigationRoute[]>(initialTabs);
   const [activeTab, setActiveTabState] = useState<NavigationRoute | null>(initialTabs[0] || null);
+  const navigate = useNavigate();
 
   const openTab = useCallback((tab: NavigationRoute) => {
     setOpenTabs((prev) => {
@@ -34,9 +37,13 @@ export const TabNavBarProvider: React.FC<TabNavBarProviderProps> = ({ children, 
       return [...prev, tab];
     });
     setActiveTabState(tab);
-  }, []);
+    navigate(tab.path);
+  }, [navigate]);
 
   const closeTab = useCallback((tab: NavigationRoute) => {
+    // Don't allow closing non-closable tabs
+    if (tab.isClosable === false) return;
+
     setOpenTabs((prev) => {
       const filtered = prev.filter((currentTab) => currentTab.path !== tab.path);
       if (activeTab && activeTab.path === tab.path) {
@@ -48,10 +55,16 @@ export const TabNavBarProvider: React.FC<TabNavBarProviderProps> = ({ children, 
 
   const setActiveTab = useCallback((tab: NavigationRoute) => {
     setActiveTabState(tab);
+    navigate(tab.path);
+  }, [navigate]);
+
+  const getTabIcon = useCallback((tab: NavigationRoute) => {
+    const routeConfig = getRouteByPath(tab.path);
+    return routeConfig?.icon;
   }, []);
 
   return (
-    <TabNavBarContext.Provider value={{ openTabs, activeTab, openTab, closeTab, setActiveTab }}>
+    <TabNavBarContext.Provider value={{ openTabs, activeTab, openTab, closeTab, setActiveTab, getTabIcon }}>
       {children}
     </TabNavBarContext.Provider>
   );
