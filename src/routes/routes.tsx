@@ -28,7 +28,6 @@ export const navigationRoutes: NavigationRoute[] = [
   }
 ];
 
-// Helper function to get route by path
 export const getRouteByPath = (path: string): NavigationRoute | undefined => {
   return navigationRoutes.find(route => route.path === path);
 }; 

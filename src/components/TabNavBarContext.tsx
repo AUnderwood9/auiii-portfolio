@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
+import React, { createContext, useContext, useReducer, ReactNode, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavigationRoute, getRouteByPath } from '../routes/routes';
 
@@ -10,6 +10,72 @@ interface TabNavBarContextType {
   setActiveTab: (tab: NavigationRoute) => void;
   getTabIcon: (tab: NavigationRoute) => React.ReactNode;
 }
+
+interface TabState {
+  openTabs: NavigationRoute[];
+  activeTab: NavigationRoute | null;
+}
+
+type TabAction = 
+  | { type: 'OPEN_TAB'; payload: NavigationRoute }
+  | { type: 'CLOSE_TAB'; payload: NavigationRoute }
+  | { type: 'SET_ACTIVE_TAB'; payload: NavigationRoute }
+  | { type: 'INITIALIZE_TABS'; payload: { tabs: NavigationRoute[]; activeTab?: NavigationRoute | null } };
+
+const tabReducer = (state: TabState, action: TabAction): TabState => {
+  switch (action.type) {
+    case 'INITIALIZE_TABS': {
+      return {
+        openTabs: action.payload.tabs,
+        activeTab: action.payload.activeTab || (action.payload.tabs.length > 0 ? action.payload.tabs[0] : null)
+      };
+    }
+
+    case 'OPEN_TAB': {
+      const tab = action.payload;
+      if (state.openTabs.find(currentTab => currentTab.path === tab.path)) {
+        return {
+          ...state,
+          activeTab: tab
+        };
+      }
+      return {
+        openTabs: [...state.openTabs, tab],
+        activeTab: tab
+      };
+    }
+
+    case 'CLOSE_TAB': {
+      const tab = action.payload;
+      
+      if (tab.isClosable === false) {
+        return state;
+      }
+
+      const filteredTabs = state.openTabs.filter(currentTab => currentTab.path !== tab.path);
+      
+      let newActiveTab = state.activeTab;
+      if (state.activeTab && state.activeTab.path === tab.path) {
+        newActiveTab = filteredTabs.length > 0 ? filteredTabs[filteredTabs.length - 1] : null;
+      }
+
+      return {
+        openTabs: filteredTabs,
+        activeTab: newActiveTab
+      };
+    }
+
+    case 'SET_ACTIVE_TAB': {
+      return {
+        ...state,
+        activeTab: action.payload
+      };
+    }
+
+    default:
+      return state;
+  }
+};
 
 const TabNavBarContext = createContext<TabNavBarContextType | undefined>(undefined);
 
@@ -27,36 +93,30 @@ interface TabNavBarProviderProps {
 }
 
 export const TabNavBarProvider: React.FC<TabNavBarProviderProps> = ({ children, initialTabs = [] }) => {
-  const [openTabs, setOpenTabs] = useState<NavigationRoute[]>(initialTabs);
-  const [activeTab, setActiveTabState] = useState<NavigationRoute | null>(initialTabs[0] || null);
+  const [state, dispatch] = useReducer(tabReducer, {
+    openTabs: initialTabs,
+    activeTab: initialTabs.length > 0 ? initialTabs[0] : null
+  });
+
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (state.activeTab) {
+      navigate(state.activeTab.path);
+    }
+  }, [state.activeTab, navigate]);
+
   const openTab = useCallback((tab: NavigationRoute) => {
-    setOpenTabs((prev) => {
-      if (prev.find((currentTab) => currentTab.path === tab.path)) return prev;
-      return [...prev, tab];
-    });
-    setActiveTabState(tab);
-    navigate(tab.path);
-  }, [navigate]);
+    dispatch({ type: 'OPEN_TAB', payload: tab });
+  }, []);
 
   const closeTab = useCallback((tab: NavigationRoute) => {
-    // Don't allow closing non-closable tabs
-    if (tab.isClosable === false) return;
-
-    setOpenTabs((prev) => {
-      const filtered = prev.filter((currentTab) => currentTab.path !== tab.path);
-      if (activeTab && activeTab.path === tab.path) {
-        setActiveTabState(filtered.length > 0 ? filtered[filtered.length - 1] : null);
-      }
-      return filtered;
-    });
-  }, [activeTab]);
+    dispatch({ type: 'CLOSE_TAB', payload: tab });
+  }, []);
 
   const setActiveTab = useCallback((tab: NavigationRoute) => {
-    setActiveTabState(tab);
-    navigate(tab.path);
-  }, [navigate]);
+    dispatch({ type: 'SET_ACTIVE_TAB', payload: tab });
+  }, []);
 
   const getTabIcon = useCallback((tab: NavigationRoute) => {
     const routeConfig = getRouteByPath(tab.path);
@@ -64,7 +124,16 @@ export const TabNavBarProvider: React.FC<TabNavBarProviderProps> = ({ children, 
   }, []);
 
   return (
-    <TabNavBarContext.Provider value={{ openTabs, activeTab, openTab, closeTab, setActiveTab, getTabIcon }}>
+    <TabNavBarContext.Provider 
+      value={{ 
+        openTabs: state.openTabs, 
+        activeTab: state.activeTab, 
+        openTab, 
+        closeTab, 
+        setActiveTab, 
+        getTabIcon 
+      }}
+    >
       {children}
     </TabNavBarContext.Provider>
   );

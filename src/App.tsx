@@ -18,9 +18,12 @@ function App() {
     setIsSidebarOpen(false);
   };
 
+  const homeRoute = navigationRoutes.find(route => route.path === '/');
+  const initialTabs = homeRoute ? [homeRoute] : [];
+
   return (
     <Router>
-      <TabNavBarProvider>
+      <TabNavBarProvider initialTabs={initialTabs}>
         <div className="flex flex-col h-screen bg-gray-50">
           <Header onToggleSidebar={toggleSidebar} />        
           <div className="flex flex-1 overflow-hidden relative">
@@ -29,7 +32,7 @@ function App() {
               isOpen={isSidebarOpen}
               onClose={closeSidebar}
             />
-            <MainDisplayPane routes={navigationRoutes}>
+            <MainDisplayPane>
               <AppRoutes />
             </MainDisplayPane>
           </div>
