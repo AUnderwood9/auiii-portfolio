@@ -15,9 +15,9 @@ const meta: Meta<typeof TabNavBar> = {
   decorators: [
     (Story) => (
       <BrowserRouter>
-        <div className="bg-gray-900 w-full max-w-4xl">
-          <Story />
-        </div>
+      <div className="bg-gray-900 w-full max-w-4xl">
+        <Story />
+      </div>
       </BrowserRouter>
     ),
   ],
@@ -25,7 +25,7 @@ const meta: Meta<typeof TabNavBar> = {
     docs: {
       description: {
         component: 'A VS Code-style tab navigation bar that integrates with TabNavBarContext for state management.',
-      },
+    },
     },
   },
 };
