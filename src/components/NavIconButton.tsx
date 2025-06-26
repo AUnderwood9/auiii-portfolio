@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useTabNavBar } from './TabNavBarContext';
+import { getRouteByPath } from '../routes/routes';
 
 interface NavIconButtonProps {
   icon: React.ReactNode;
@@ -14,10 +15,13 @@ const NavIconButton: React.FC<NavIconButtonProps> = ({
   path, 
   isActive = false
 }) => {
-  const navigate = useNavigate();
+  const { openTab } = useTabNavBar();
 
   const handleClick = () => {
-    navigate(path);
+    const route = getRouteByPath(path);
+    if (route) {
+      openTab(route);
+    }
   };
 
   return (
