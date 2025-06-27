@@ -2,6 +2,7 @@ import React from 'react';
 import JavascriptOriginalIcon from 'react-devicons/javascript/original';
 import Home from '../pages/Home/Home';
 import About from '../pages/About/About';
+import Experience from '../pages/Experience/Experience';
 
 export interface NavigationRoute {
     path: string;
@@ -24,6 +25,13 @@ export const navigationRoutes: NavigationRoute[] = [
         text: 'About',
         icon: <JavascriptOriginalIcon />,
         component: About,
+        isClosable: true
+    },
+    {
+        path: '/experience',
+        text: 'Experience',
+        icon: <JavascriptOriginalIcon />,
+        component: Experience,
         isClosable: true
     }
 ];
