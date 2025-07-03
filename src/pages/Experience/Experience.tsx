@@ -36,12 +36,18 @@ const Experience: React.FC = () => {
                 Responsible for <Property>architecture decisions</Property>, <Property>code reviews</Property>, 
                 and <Property>mentoring junior developers</Property>.
               </p>
-              
+              {/* Technologies use keywords, libraries use functions and metrics use strings */}
               <ul className="ml-6 space-y-2 list-disc">
-                <li>Improved application performance by <String>40%</String> through code optimization</li>
-                <li>Implemented <Keyword>CI/CD pipelines</Keyword> reducing deployment time by <String>60%</String></li>
-                <li>Built reusable component library used across <String>8 projects</String></li>
-                <li>Collaborated with UX team to enhance user experience metrics</li>
+                <li>Developed <Keyword>AWS Lambda functions</Keyword> in <Keyword>Python</Keyword> to automate auction report processing.</li>
+                <li>Built and maintained React front-end applications to enhance UI responsiveness for auctions.</li>
+                <li>Designed RESTful APIs with AWS API Gateway to improve and integrate with legacy applications</li>
+                <li>GraphQL queries and mutations using AWS AppSync to optimize data retrieval efficiency</li>
+                <li>Integrated DynamoDB as a data source to ensure high availability and scalability for transactions</li>
+                <li>Utilized AWS S3 for secure storage of reports and billing transactions, improving data accessibility</li>
+                <li>Queried AWS Athena to extract insights from data lakes, enabling better data-driven decisions</li>
+                <li>Managed AWS IAM policies and permissions to enforce security best practices and access control</li>
+                <li>Built reusable component library used across <String>4 projects</String></li>
+                <li>Collaborated with UX team to enhance user experience metrics.</li>
               </ul>
               
               <p>
@@ -71,10 +77,11 @@ const Experience: React.FC = () => {
                 </p>
                 
                 <ul className="ml-6 space-y-2 list-disc">
-                  <li>Built responsive web apps using <Function>React</Function> and <Function>Vue.js</Function></li>
-                  <li>Developed RESTful APIs with <Function>Node.js</Function> and <Function>Express</Function></li>
-                  <li>Implemented authentication systems and database optimization</li>
-                  <li>Collaborated in <Keyword>Agile</Keyword> environment with cross-functional teams</li>
+                  <li>Actively participate in a Scaled Agile Framework including Sprint Planning and Backlog Refinement.</li>
+                  <li>Developed solutions for user stories in an ATDD environment using Java, JavaScript, jQuery, HTML, CSS, Spring Webflow and Apache Tiles.</li>
+                  <li>Wrote JUnit tests to ensure code reliability and reduce production issues using JUnit.</li>
+                  <li>Utilize Continuous Integration Tools for deployments streamlining deployments.</li>
+                  <li>Managed dependencies and builds with Maven, enhancing software maintainability</li>
                 </ul>
                 
                 <p>
@@ -97,10 +104,12 @@ const Experience: React.FC = () => {
                 </p>
                 
                 <ul className="ml-6 space-y-2 list-disc">
-                  <li>Converted design mockups into pixel-perfect web interfaces</li>
-                  <li>Maintained and updated legacy <Function>jQuery</Function> applications</li>
-                  <li>Participated in code reviews and learned <String>Git workflows</String></li>
-                  <li>Contributed to mobile-first responsive design implementations</li>
+                  <li>Actively participate in an Agile Scrum environment including Sprint Planning and Daily Scrum.</li>
+                  <li>Identified and reported defects via Jira, collaborating with engineers to resolve issues.</li>
+                  <li>Performed RESTful API testing with Java RestAssured and JUnit, ensuring backend reliability.</li>
+                  <li>Perform Backend Testing by developing and executing complex SQL queries in an Oracle Database.</li>
+                  <li>Built Spring Boot tools to manage test data sanitation and creation, reducing manual effort.</li>
+                  <li>Converted design mockups into pixel-perfect web interfaces.</li>
                 </ul>
                 
                 <p>
