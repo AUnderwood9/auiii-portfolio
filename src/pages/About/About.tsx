@@ -23,17 +23,18 @@ const About: React.FC = () => {
             </h2>
             
             <p>
-              My name is <String>Your Name</String>, and I'm a <Property>Full Stack Developer</Property> 
-              based in <String>Your City, Country</String>. My journey into programming began during 
+              My name is <String>Andrew</String>, and I'm a <Property>Full Stack Developer</Property> 
+              based in <String>Birmingham, AL</String>. My journey into programming began during 
               my studies in <String>Computer Science</String>, where I discovered my passion for 
-              creating digital solutions that make a real difference.
+              building software that offer value and solve real world problems. 
+              I'm currently working as a <Property>Full Stack Developer</Property> at <String>AutoTec</String>, where I've been since <String>2020</String>.
             </p>
             
             <p>
               I graduated with a <Property>Bachelor's degree in Computer Science</Property> from 
-              <String>Your University</String> in <String>2024</String>. During my academic years, 
-              I focused on <Keyword>software engineering principles</Keyword>, <Keyword>algorithms</Keyword>, 
-              and <Keyword>web development</Keyword>, which laid a solid foundation for my career.
+              <String>Tuskegee University</String> in <String>2015</String>. During my academic years, 
+              I focused on building strong fundamentals in <Keyword>software development</Keyword> and <Keyword>web development</Keyword>, 
+              which laid a solid foundation for my career.
             </p>
           </section>
           
@@ -43,22 +44,25 @@ const About: React.FC = () => {
             </h2>
             
             <p>
-              Currently, I work as a <Property>Frontend Developer</Property> at <String>Tech Company</String>, 
-              where I've been since <String>2023</String>. In this role, I specialize in building 
-              <Keyword>responsive web applications</Keyword> using <String>React</String>, 
-              <String>TypeScript</String>, and <String>Tailwind CSS</String>.  
+              Currently, I work as a <Property> Developer</Property> at <String>AutoTec</String>, 
+              where I've been since <String>2020</String>. In this role, I specialize in building 
+              <Keyword>responsive intrefaces</Keyword> using <String>React</String>, 
+              <String>TypeScript</String>, and <String>Tailwind CSS</String> for our clients in the automotive industry. 
+              I also work with <String>Python</String> and <String>AWS Lambdas</String>; 
+              while employing other AWS cloud services to build robust applications.
             </p>
             
             <p>
-              Before my current position, I gained valuable experience as a <Property>Junior Developer</Property> 
-              at <String>Startup Inc</String> from <String>2022 to 2023</String>. There, I worked with 
-              <String>JavaScript</String>, <String>Node.js</String>, and <String>MongoDB</String>, 
-              learning the importance of <Keyword>scalable architecture</Keyword> and 
-              <Keyword>clean code practices</Keyword>.
+              Before my current position, I gained valuable experience as a <Property>UI and Automation Developer</Property> 
+              at <String>BBVA</String> from <String>2018 to 2020</String>. There, I worked with 
+              <String>JavaScript</String>, <String>jQuery</String>, and <String>Java</String>, 
+              learning the importance of <Keyword>collaboration</Keyword> and 
+              <Keyword>clean code practices</Keyword>. 
+              I also worked with <String>Spring Webflow</String> and <String>Spring MVC</String> to build our UI.
             </p>
             
             <p>
-              <Comment>// Every project teaches me something new about problem-solving</Comment>
+              <Comment>// Every project should teach you something new about problem-solving!</Comment>
             </p>
           </section>
           
@@ -69,16 +73,8 @@ const About: React.FC = () => {
             
             <p>
               Beyond coding, I'm passionate about <String>UI/UX design</String> and believe that 
-              great software should be both <Keyword>functional</Keyword> and <Keyword>beautiful</Keyword>. 
-              I actively contribute to <String>open source projects</String> and enjoy mentoring 
-              other developers who are just starting their journey.
-            </p>
-            
-            <p>
-              I'm also fascinated by <String>machine learning</String> and its applications in 
-              web development. In my free time, you'll find me exploring new frameworks, 
-              taking <String>photography</String>, or working on personal projects that challenge 
-              me to <Function>grow</Function> as a developer.
+              great software should be both <Keyword>functional</Keyword> and <Keyword>eye catching</Keyword>. 
+              Outside of software and the learning, I enjoy <String>gaming</String> and Mixed Martial Arts during my free time.
             </p>
           </section>
           
@@ -88,15 +84,9 @@ const About: React.FC = () => {
             </h2>
             
             <p>
-              I'm always excited to connect with fellow developers, potential collaborators, 
-              or anyone interested in technology. Feel free to reach out to me at 
-              <String>your.email@example.com</String>, connect with me on 
-              <Property>LinkedIn</Property>, or check out my projects on 
-              <Property>GitHub</Property>.
-            </p>
-            
-            <p>
-              <Comment>// Ready to collaborate on your next project!</Comment>
+                If your interested in connecting, feel free to reach out to me at 
+              <Property>UnderwoodAndrewIII@gmail.com</Property>, or connect with me on 
+              <Property>LinkedIn</Property>
             </p>
           </section>
         </div>

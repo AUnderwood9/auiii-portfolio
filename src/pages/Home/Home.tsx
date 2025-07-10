@@ -19,8 +19,8 @@ const Home: React.FC = () => {
             <p>
               Hi there! I'm a <String>full-stack developer</String> with a passion for building 
               <Property> modern web applications</Property>. I specialize in <Function>React</Function>, 
-              <Function>TypeScript</Function>, and <Function>Node.js</Function>, but I'm always 
-              excited to <Keyword>learn</Keyword> new technologies and tackle challenging problems.
+              <Function>TypeScript</Function>, and <Function>Python</Function>, but I'm always 
+              excited to <Keyword>learn and experiment with</Keyword> new technologies and tackle challenging problems.
             </p>
           </header>
           
@@ -31,47 +31,23 @@ const Home: React.FC = () => {
             
             <p>
               My technical toolkit includes <String>React & TypeScript</String> for building 
-              dynamic user interfaces, <String>Node.js & Express</String> for robust backend 
-              services, and <String>Python & Django</String> for rapid development. I also 
-              have experience with <String>database design</String>, <String>cloud architecture</String>, 
-              and <String>UI/UX design principles</String>.
+              dynamic user interfaces, <String>Python & AWS Lambdas</String> for robust backend 
+              services, and <String>AWS AppSync</String> for GraphQL APIs. I also 
+              have a little bit of experience with <String>database design</String>, <String>cloud architecture</String>, 
+              and a strong understanding of <String>UI/UX design principles</String>. 
+              I'm also becoming a big fan of <String>AI tools</String>!
             </p>
             
             <p>
-              <Comment>// I believe in writing clean, maintainable code that scales</Comment>
-            </p>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-semibold">
-              <Function>Recent Projects</Function>
-            </h2>
-            
-            <p>
-              I recently built a <Property>VS Code themed portfolio</Property> using React and 
-              TypeScript, showcasing my ability to create unique user experiences. I've also 
-              developed a <Property>full-stack e-commerce platform</Property> with payment 
-              integration and a <Property>collaborative task management app</Property> with 
-              real-time updates.
-            </p>
-            
-            <p>
-              Each project taught me something new about <Keyword>problem-solving</Keyword>, 
-              <Keyword>architecture design</Keyword>, and <Keyword>user experience</Keyword>. 
-              I'm always looking for opportunities to <Function>grow</Function> and 
-              <Function>contribute</Function> to meaningful projects.
+              <Comment>// I believe in writing clean, maintainable code that gets the job done!</Comment>
             </p>
           </section>
           
           <section className="space-y-4">
             <p>
-              <Comment>// Let's connect and build something amazing together!</Comment>
-            </p>
-            
-            <p>
-              I'm currently open to new opportunities and collaborations. Whether you're 
+              I'm currently open to new and engaging opportunities. Whether you're 
               looking for a <String>frontend specialist</String>, a <String>full-stack developer</String>, 
-              or just want to chat about technology, I'd love to <Keyword>connect</Keyword> with you.
+              or just want to chat about technology, I'd love to <Keyword>connect</Keyword> with you!
             </p>
           </section>
         </div>

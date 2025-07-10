@@ -52,7 +52,7 @@ const Experience: React.FC = () => {
 
                             <p>
                                 <Comment>
-                                    // Technologies: React, Redux, TypeScript, Python, Tailwind, HTML, CSS, Lambda, S3, Athena, IAM, CloudFront,
+                                    // Main Technologies: React, Redux, TypeScript, Python, Tailwind, HTML, CSS, Lambda, S3, Athena, IAM, CloudFront,
                                     AppSync, API Gateway, Bitbucket, DynamoDB, PostgreSQL, Jira
                                 </Comment>
                             </p>
@@ -86,7 +86,7 @@ const Experience: React.FC = () => {
                                 </ul>
 
                                 <p>
-                                    <Comment>// Technologies: JavaScript, jQuery, Apache Tiles, Spring Webflow, Java, Spring MVC, HTML, CSS, Bitbucket, Jira</Comment>
+                                    <Comment>// Main Technologies: JavaScript, jQuery, Apache Tiles, Spring Webflow, Java, Spring MVC, HTML, CSS, Bitbucket, Jira</Comment>
                                 </p>
                             </div>
 
@@ -114,7 +114,7 @@ const Experience: React.FC = () => {
                                 </ul>
 
                                 <p>
-                                    <Comment>// Technologies: JavaScript, jQuery, Java, Spring MVC, Spring Boot, HTML, CSS, Bitbucket, Jira</Comment>
+                                    <Comment>// Main Technologies: JavaScript, jQuery, Java, Spring MVC, Spring Boot, HTML, CSS, Bitbucket, Jira</Comment>
                                 </p>
                             </div>
                         </div>
@@ -156,9 +156,10 @@ const Experience: React.FC = () => {
                                 <h4 className="font-medium mb-2"><Property>Tools & Others</Property></h4>
                                 <p>
                                     <String>
-                                        Git • AWS • Docker • BitBucket • Jira • Figma 
+                                        ChatGPT • Cursor • Git • AWS • Docker • BitBucket • Jira • Figma 
                                         • Cognito • IAM • Selenium • API Gateway • AppSync 
                                         • S3 • Athena • Step Functions • DynamoDB • SQL Server
+                                        • Event Bridge • CloudWatch
                                         </String>
                                 </p>
                             </div>
