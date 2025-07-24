@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import JavascriptOriginalIcon from 'react-devicons/javascript/original';
@@ -59,28 +60,26 @@ export const Active: Story = {
 export const MultipleButtons: Story = {
   decorators: [
     () => (
-      <BrowserRouter>
-        <div className="bg-gray-800 w-48 flex flex-col py-2">
-          <NavIconButton 
-            icon={<JavascriptOriginalIcon />} 
-            text="Home" 
-            path="/" 
-            isActive={true}
-          />
-          <NavIconButton 
-            icon={<JavascriptOriginalIcon />} 
-            text="About" 
-            path="/about" 
-            isActive={false}
-          />
-          <NavIconButton 
-            icon={<JavascriptOriginalIcon />} 
-            text="Projects" 
-            path="/projects" 
-            isActive={false}
-          />
-        </div>
-      </BrowserRouter>
+      <div className="bg-gray-800 w-48 flex flex-col py-2">
+        <NavIconButton 
+          icon={<JavascriptOriginalIcon />} 
+          text="Home" 
+          path="/" 
+          isActive={true}
+        />
+        <NavIconButton 
+          icon={<JavascriptOriginalIcon />} 
+          text="About" 
+          path="/about" 
+          isActive={false}
+        />
+        <NavIconButton 
+          icon={<JavascriptOriginalIcon />} 
+          text="Projects" 
+          path="/projects" 
+          isActive={false}
+        />
+      </div>
     ),
   ],
 };
