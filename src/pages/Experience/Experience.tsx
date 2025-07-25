@@ -31,8 +31,8 @@ const Experience: React.FC = () => {
                             </p>
 
                             <p>
-                                Building user friendly and responsive <Property>front ends</Property> using <Function>React</Function>,
-                                <Function>TypeScript</Function>, and a little bit of <Function>Tailwind</Function>.
+                                Building user friendly and responsive <Property>front ends</Property> using <Function> React</Function>,
+                                <Function> TypeScript</Function>, and a little bit of <Function>Tailwind</Function>.
                                 Supporting and creating robust <Property>backend services</Property> using <Keyword>Python</Keyword> and <Function>AWS Lambda</Function>.
                             </p>
 

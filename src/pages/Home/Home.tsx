@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             <p>
               I'm currently open to new and engaging opportunities. Whether you're 
               looking for a <String>frontend specialist</String>, a <String>full-stack developer</String>, 
-              or just want to chat about technology, I'd love to <Keyword>connect</Keyword> with you!
+              or just want to chat about programming, I'd love to <Keyword>connect</Keyword> with you!
             </p>
           </section>
         </div>
