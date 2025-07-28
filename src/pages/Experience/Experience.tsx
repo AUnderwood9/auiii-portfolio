@@ -101,7 +101,7 @@ const Experience: React.FC = () => {
                                 <p>
                                     Started my professional journey in a collaborative environment.
                                     Focused on <Property>automated testing</Property> while learning
-                                    <Keyword>industry best practices</Keyword> and <Keyword>collaborative workflows</Keyword>.
+                                    <Keyword> industry best practices</Keyword> and <Keyword>collaborative workflows</Keyword>.
                                 </p>
 
                                 <ul className="ml-6 space-y-2 list-disc">
