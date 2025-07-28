@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTabNavBar } from './TabNavBarContext';
+import { useTabNavBar } from '../context/TabNavBarContext';
 import { PlusIcon } from '@heroicons/react/24/outline';
 
 const TabNavBar: React.FC = () => {

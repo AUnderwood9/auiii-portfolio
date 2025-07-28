@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTabNavBar } from './TabNavBarContext';
+import { useTabNavBar } from '../context/TabNavBarContext';
 import { getRouteByPath } from '../routes/routes';
 
 interface NavIconButtonProps {

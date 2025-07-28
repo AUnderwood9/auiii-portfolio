@@ -5,7 +5,7 @@ import SideNavigation from './components/SideNavigation.tsx';
 import MainDisplayPane from './components/MainDisplayPane.tsx';
 import Header from './components/Header.tsx';
 import { navigationRoutes } from './routes/routes';
-import { TabNavBarProvider } from './components/TabNavBarContext';
+import { TabNavBarProvider } from './context/TabNavBarContext.tsx';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
