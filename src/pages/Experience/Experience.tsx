@@ -31,8 +31,8 @@ const Experience: React.FC = () => {
                             </p>
 
                             <p>
-                                Building user friendly and responsive <Property>front ends</Property> using <Function>React</Function>,
-                                <Function>TypeScript</Function>, and a little bit of <Function>Tailwind</Function>.
+                                Building user friendly and responsive <Property>front ends</Property> using <Function> React</Function>,
+                                <Function> TypeScript</Function>, and a little bit of <Function>Tailwind</Function>.
                                 Supporting and creating robust <Property>backend services</Property> using <Keyword>Python</Keyword> and <Function>AWS Lambda</Function>.
                             </p>
 
@@ -101,7 +101,7 @@ const Experience: React.FC = () => {
                                 <p>
                                     Started my professional journey in a collaborative environment.
                                     Focused on <Property>automated testing</Property> while learning
-                                    <Keyword>industry best practices</Keyword> and <Keyword>collaborative workflows</Keyword>.
+                                    <Keyword> industry best practices</Keyword> and <Keyword>collaborative workflows</Keyword>.
                                 </p>
 
                                 <ul className="ml-6 space-y-2 list-disc">

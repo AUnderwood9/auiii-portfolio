@@ -23,7 +23,7 @@ const About: React.FC = () => {
             </h2>
             
             <p>
-              My name is <String>Andrew</String>, and I'm a <Property>Full Stack Developer</Property> 
+              My name is <String>Andrew</String>, and I'm a <Property>Full Stack Developer </Property>
               based in <String>Birmingham, AL</String>. My journey into programming began during 
               my studies in <String>Computer Science</String>, where I discovered my passion for 
               building software that offer value and solve real world problems. 
@@ -31,8 +31,8 @@ const About: React.FC = () => {
             </p>
             
             <p>
-              I graduated with a <Property>Bachelor's degree in Computer Science</Property> from 
-              <String>Tuskegee University</String> in <String>2015</String>. During my academic years, 
+              I graduated with a <Property>Bachelor's degree in Computer Science</Property> from
+              <String> Tuskegee University</String> in <String>2015</String>. During my academic years, 
               I focused on building strong fundamentals in <Keyword>software development</Keyword> and <Keyword>web development</Keyword>, 
               which laid a solid foundation for my career.
             </p>
@@ -40,25 +40,25 @@ const About: React.FC = () => {
           
           <section className="space-y-4">  
             <h2 className="text-2xl font-semibold">
-              <Function>Professional Experience</Function>
+              <Function>Professional Experience Overview</Function>
             </h2>
             
             <p>
               Currently, I work as a <Property> Developer</Property> at <String>AutoTec</String>, 
               where I've been since <String>2020</String>. In this role, I specialize in building 
-              <Keyword>responsive intrefaces</Keyword> using <String>React</String>, 
-              <String>TypeScript</String>, and <String>Tailwind CSS</String> for our clients in the automotive industry. 
+              <Keyword> responsive interfaces</Keyword> using <String>React</String>, 
+              <String> TypeScript</String>, and <String>Tailwind CSS</String> for our clients in the automotive indu  stry. 
               I also work with <String>Python</String> and <String>AWS Lambdas</String>; 
               while employing other AWS cloud services to build robust applications.
             </p>
             
             <p>
-              Before my current position, I gained valuable experience as a <Property>UI and Automation Developer</Property> 
+              Before my current position, I gained valuable experience as a <Property>UI and Automation Developer </Property> 
               at <String>BBVA</String> from <String>2018 to 2020</String>. There, I worked with 
-              <String>JavaScript</String>, <String>jQuery</String>, and <String>Java</String>, 
+              <String> JavaScript</String>, <String> jQuery</String>, and <String>Java</String>, 
               learning the importance of <Keyword>collaboration</Keyword> and 
-              <Keyword>clean code practices</Keyword>. 
-              I also worked with <String>Spring Webflow</String> and <String>Spring MVC</String> to build our UI.
+              <Keyword> clean code </Keyword> practices that are <Keyword>robust</Keyword> and <Keyword>maintainable</Keyword>. 
+              I also worked with <String>Spring Webflow</String> and <String>Spring MVC</String> to build and serve up our UI.
             </p>
             
             <p>
@@ -73,7 +73,7 @@ const About: React.FC = () => {
             
             <p>
               Beyond coding, I'm passionate about <String>UI/UX design</String> and believe that 
-              great software should be both <Keyword>functional</Keyword> and <Keyword>eye catching</Keyword>. 
+              great software should be <Keyword>functional</Keyword>, <Keyword>eye catching</Keyword>, and <Keyword>user friendly</Keyword>. 
               Outside of software and the learning, I enjoy <String>gaming</String> and Mixed Martial Arts during my free time.
             </p>
           </section>
@@ -85,8 +85,9 @@ const About: React.FC = () => {
             
             <p>
                 If your interested in connecting, feel free to reach out to me at 
-              <Property>UnderwoodAndrewIII@gmail.com</Property>, or connect with me on 
-              <Property>LinkedIn</Property>
+              <Property> <a href="mailto:UnderwoodAndrewIII@gmail.com"> UnderwoodAndrewIII@gmail.com</a></Property>, or connect with me on 
+              <Property> <a href="https://www.linkedin.com/in/andrew-underwood-5b796813a/">LinkedIn</a></Property>. You can also view some of
+              the work i've done on my free time at my <Property> <a href="https://github.com/AUnderwood9">GitHub</a></Property> page.
             </p>
           </section>
         </div>
