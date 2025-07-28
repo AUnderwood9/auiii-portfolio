@@ -1,5 +1,5 @@
 import React from "react";
-import GearIcon from "./GearIcon.tsx";
+import ConfigurationButton from "./ConfigurationButton.tsx";
 import HamburgerIcon from "./HamburgerIcon.tsx";
 
 interface HeaderProps {
@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
       </div>
 
       <div className="flex items-center justify-end h-full">
-        <GearIcon className="mt-[-1px]" />
+        <ConfigurationButton className="mt-[-1px]" />
       </div>
     </header>
   );
