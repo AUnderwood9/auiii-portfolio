@@ -114,11 +114,11 @@ const Tooltip: React.FC<TooltipProps> = ({ text, children, className = '' }) => 
       {isVisible && (
         <div
           ref={tooltipRef}
-          className="fixed z-50 px-2 py-1 text-sm text-white bg-gray-800 border border-gray-600 rounded shadow-lg pointer-events-none transition-opacity duration-200"
+          className={`fixed z-50 px-2 py-1 text-sm text-white bg-gray-800 border border-gray-600
+                    rounded shadow-lg pointer-events-none transition-opacity duration-200 opacity-100`}
           style={{
             top: `${position.top}px`,
             left: `${position.left}px`,
-            opacity: 1,
           }}
         >
           {text}
