@@ -1,15 +1,18 @@
 import React from 'react';
 import TabNavBar from './TabNavBar';
+import { useTheme } from '../context/ThemeContext.tsx';
 
 interface MainDisplayPaneProps {
   children: React.ReactNode;
 }
 
 const MainDisplayPane: React.FC<MainDisplayPaneProps> = ({ children }) => {
+  const { themeClass } = useTheme();
+
   return (
-    <div className="flex flex-col h-full bg-gray-900 text-white w-full">
+    <div className={`flex flex-col h-full ${themeClass.primary} w-full`}>
       <TabNavBar />
-      <div className="flex-1 bg-gray-900 overflow-auto">
+      <div className={`flex-1 ${themeClass.primary} overflow-auto`}>
         {children}
       </div>
     </div>

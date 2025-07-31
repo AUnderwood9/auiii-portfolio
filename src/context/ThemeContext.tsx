@@ -1,9 +1,16 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-type AvailableThemes = 'light' | 'dark';
+interface ThemeClass {
+    name: string;
+    header: string;
+    primary: string;
+    secondary: string;
+}
+
+export type AvailableThemes = keyof typeof themeClasses;
 
 interface ThemeContextType {
-    themeClass: AvailableThemes;
+    themeClass: ThemeClass;
     setTheme: (theme: AvailableThemes) => void;
 }
 
@@ -21,11 +28,38 @@ export const useTheme = () => {
     return context;
 };
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-    const [themeClass, setThemeClass] = useState<AvailableThemes>('light');
+export const themeClasses = {
+    default: {
+        name: 'Default',
+        header: 'bg-[#2d2d30] text-gray-300',
+        primary: 'bg-gray-900 text-white',
+        secondary: 'bg-gray-800 text-white',
+    },
+    dark: {
+        name: 'Dark',
+        header: 'bg-gray-900 text-white',
+        primary: 'bg-gray-800 text-white',
+        secondary: 'bg-gray-700 text-white',
+    },
+    light: {
+        name: 'Light',
+        header: 'bg-white text-black',
+        primary: 'bg-white text-black',
+        secondary: 'bg-gray-100 text-black',
+    },
+    purple: {
+        name: 'Purple',
+        header: 'bg-purple-900 text-white',
+        primary: 'bg-purple-800 text-white',
+        secondary: 'bg-purple-700 text-white',
+    },
+}
 
-    const setTheme = (theme: AvailableThemes) => {
-        setThemeClass(theme === 'light' ? 'dark' : 'light');
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+    const [themeClass, setThemeClass] = useState<ThemeClass>(themeClasses.default);
+
+    const setTheme = (theme: AvailableThemes) => { 
+        setThemeClass(themeClasses[theme.toLowerCase() as AvailableThemes]);
     };
 
     return (

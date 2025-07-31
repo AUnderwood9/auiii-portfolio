@@ -1,12 +1,14 @@
 import React from 'react';
 import { useTabNavBar } from '../context/TabNavBarContext';
 import { PlusIcon } from '@heroicons/react/24/outline';
+import { useTheme } from '../context/ThemeContext';
 
 const TabNavBar: React.FC = () => {
     const { openTabs, activeTab, closeTab, setActiveTab, getTabIcon } = useTabNavBar();
+    const { themeClass } = useTheme();
 
     return (
-        <div className="bg-gray-800 border-b border-gray-700 flex items-center min-h-[35px] pr-2">
+        <div className={`${themeClass.secondary} border-b border-gray-700 flex items-center min-h-[35px] pr-2`}>
             {openTabs.length > 0 ? (
                 <div className="flex">
                     {openTabs.map((tab) => {

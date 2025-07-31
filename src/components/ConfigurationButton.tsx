@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Tooltip from './Tooltip';
+import { useTheme, AvailableThemes, themeClasses } from '../context/ThemeContext';
 
 interface ConfigurationButtonProps {
   className?: string;
@@ -8,7 +9,8 @@ interface ConfigurationButtonProps {
 
 const ConfigurationButton: React.FC<ConfigurationButtonProps> = ({ className }) => {
   const [isThemeSettingsOpen, setIsThemeSettingsOpen] = useState(false);
-
+  const { themeClass, setTheme } = useTheme();
+  const availableThemes = Object.keys(themeClasses) as AvailableThemes[];
   const handleConfigurationButtonClick = () => {
     console.log('ConfigurationButton clicked');
     setIsThemeSettingsOpen(!isThemeSettingsOpen);
@@ -20,14 +22,14 @@ const ConfigurationButton: React.FC<ConfigurationButtonProps> = ({ className }) 
         <Cog6ToothIcon className={`w-6 h-6 ${className} configuration-button`} onClick={handleConfigurationButtonClick} />
       </Tooltip>
       {isThemeSettingsOpen && (
-        <select 
-          className="w-64 p-2 rounded-md absolute z-50 top-[1rem] left-1/2 -translate-x-1/2"
-          // onChange={handleThemeChange}
+        <select
+          value={themeClass.name}
+          className="w-64 p-2 rounded-md absolute z-50 top-[1rem] left-1/2 -translate-x-1/2 text-gray-600"
+          onChange={(event) => setTheme(event.target.value as AvailableThemes)}
         >
-          <option value="blue">Blue</option>
-          <option value="purple">Purple</option>
-          <option value="green">Light</option>
-          <option value="red">Dark</option>
+          {availableThemes.map((theme) => (
+            <option key={theme} value={theme}>{themeClasses[theme].name}</option>
+          ))}
         </select>
       )}
     </>
