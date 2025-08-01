@@ -43,15 +43,16 @@ export const themeClasses = {
     },
     light: {
         name: 'Light',
-        header: 'bg-white text-black',
+        // header: 'bg-neutral-100 text-black',
+        header: 'bg-stone-100 text-black',
         primary: 'bg-white text-black',
-        secondary: 'bg-gray-100 text-black',
+        secondary: 'bg-gray-200 text-black',
     },
     purple: {
         name: 'Purple',
         header: 'bg-purple-900 text-white',
-        primary: 'bg-purple-800 text-white',
-        secondary: 'bg-purple-700 text-white',
+        primary: 'bg-purple-600 text-white',
+        secondary: 'bg-purple-500 text-white',
     },
 }
 
