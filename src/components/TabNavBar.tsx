@@ -18,7 +18,7 @@ const TabNavBar: React.FC = () => {
                             'flex items-center space-x-2',
                             'min-w-[120px] max-w-[200px]',
                             'group hover:bg-gray-650 cursor-pointer',
-                            isActive ? 'bg-gray-600' : 'bg-gray-900'
+                            isActive ? themeClass.primary : themeClass.secondary
                         ].join(' ');
 
                         return (
@@ -30,7 +30,7 @@ const TabNavBar: React.FC = () => {
                                 <div className="w-4 h-4 flex-shrink-0 flex items-center justify-center">
                                     {getTabIcon(tab)}
                                 </div>
-                                <span className="text-sm truncate flex-1 text-white">
+                                <span className="text-sm truncate flex-1">
                                     {tab.text || 'Untitled'}
                                 </span>
                                 {tab.isClosable !== false && (
