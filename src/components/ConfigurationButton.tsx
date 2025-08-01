@@ -9,7 +9,7 @@ interface ConfigurationButtonProps {
 
 const ConfigurationButton: React.FC<ConfigurationButtonProps> = ({ className }) => {
   const [isThemeSettingsOpen, setIsThemeSettingsOpen] = useState(false);
-  const { themeClass, setTheme } = useTheme();
+  const { currentTheme, setTheme } = useTheme();
   const availableThemes = Object.keys(themeClasses) as AvailableThemes[];
   const handleConfigurationButtonClick = () => {
     console.log('ConfigurationButton clicked');
@@ -23,7 +23,8 @@ const ConfigurationButton: React.FC<ConfigurationButtonProps> = ({ className }) 
       </Tooltip>
       {isThemeSettingsOpen && (
         <select
-          value={themeClass.name}
+          id="theme-selector"
+          value={currentTheme}
           className="w-64 p-2 rounded-md absolute z-50 top-[1rem] left-1/2 -translate-x-1/2 text-gray-600"
           onChange={(event) => setTheme(event.target.value as AvailableThemes)}
         >

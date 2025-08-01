@@ -10,6 +10,7 @@ interface ThemeClass {
 export type AvailableThemes = keyof typeof themeClasses;
 
 interface ThemeContextType {
+    currentTheme: AvailableThemes;
     themeClass: ThemeClass;
     setTheme: (theme: AvailableThemes) => void;
 }
@@ -56,14 +57,16 @@ export const themeClasses = {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-    const [themeClass, setThemeClass] = useState<ThemeClass>(themeClasses.default);
+    const [currentTheme, setCurrentTheme] = useState<AvailableThemes>('default');
 
-    const setTheme = (theme: AvailableThemes) => { 
-        setThemeClass(themeClasses[theme.toLowerCase() as AvailableThemes]);
+    const themeClass = themeClasses[currentTheme];
+
+    const setTheme = (theme: AvailableThemes) => {
+        setCurrentTheme(theme);
     };
 
     return (
-        <ThemeContext.Provider value={{ themeClass, setTheme }}>
+        <ThemeContext.Provider value={{ currentTheme, themeClass, setTheme }}>
             {children}
         </ThemeContext.Provider>
     );
