@@ -25,7 +25,7 @@ const ConfigurationButton: React.FC<ConfigurationButtonProps> = ({ className }) 
         <select
           id="theme-selector"
           value={currentTheme}
-          className="w-64 p-2 rounded-md absolute z-50 top-[1rem] left-1/2 -translate-x-1/2 text-gray-600"
+          className="w-80 p-2 rounded-md absolute z-50 top-[1rem] left-1/2 -translate-x-1/2 text-gray-600 z-20 shadow-md shadow-gray-600"
           onChange={(event) => setTheme(event.target.value as AvailableThemes)}
         >
           {availableThemes.map((theme) => (

@@ -5,3 +5,8 @@
 .configuration-button:hover {
     cursor: pointer;
 }
+
+#theme-selector:focus,
+#theme-selector:focus-visible {
+    outline: none;
+}
