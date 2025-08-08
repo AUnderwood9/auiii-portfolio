@@ -26,53 +26,65 @@ const ThemeSelector: React.FC = () => {
   }, [wrapperRef]);
 
   return (
-    <div 
-        ref={wrapperRef}
-        className="absolute z-10 w-48 lg:w-80 top-[50vh] lg:top-[1rem] left-1/2 -translate-x-1/2"
-        role="listbox"
-    >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`
-          w-full px-4 py-2 text-left
-          bg-white dark:bg-gray-700
-          border border-gray-300 dark:border-gray-500
-          flex items-center justify-between
-          ${isOpen ? 'rounded-t-md' : 'rounded-md shadow-sm'}
-        `}
-        aria-haspopup="true"
-        aria-expanded={isOpen}
+    <>
+      {/* Mobile backdrop - only visible on mobile when dropdown is open */}
+        <div 
+          className="
+            backdrop-component
+            absolute w-full h-full inset-0
+            bg-black bg-opacity-50 z-1
+          "
+          onClick={() => setIsOpen(false)}
+        />
+      
+      <div 
+          ref={wrapperRef}
+          className="absolute z-10 w-48 lg:w-80 top-[50vh] lg:top-[1rem] left-1/2 -translate-x-1/2"
+          role="listbox"
       >
-        <span>{themeClasses[currentTheme].name}</span>
-        <ChevronDownIcon className={`h-5 w-5 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`} />
-      </button>
-
-      {isOpen && (
-        <ul
+        <button
+          onClick={() => setIsOpen(!isOpen)}
           className={`
-            absolute z-10 w-full rounded-b-md shadow-lg
+            w-full px-4 py-2 text-left
             bg-white dark:bg-gray-700
-            border-x border-b border-gray-300 dark:border-gray-500
+            border border-gray-300 dark:border-gray-500
+            flex items-center justify-between
+            ${isOpen ? 'rounded-t-md' : 'rounded-md shadow-sm'}
           `}
+          aria-haspopup="true"
+          aria-expanded={isOpen}
         >
-          {availableThemes.map((theme) => (
-            <li
-              key={theme}
-              onClick={() => handleThemeSelect(theme)}
-              className={`
-                px-4 py-2 cursor-pointer
-                hover:bg-gray-100 dark:hover:bg-gray-600
-                ${currentTheme === theme ? 'font-bold bg-gray-200 dark:bg-gray-500' : ''}
-              `}
-              role="option"
-              aria-selected={currentTheme === theme}
-            >
-              {themeClasses[theme].name}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+          <span>{themeClasses[currentTheme].name}</span>
+          <ChevronDownIcon className={`h-5 w-5 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`} />
+        </button>
+
+        {isOpen && (
+          <ul
+            className={`
+              absolute z-10 w-full rounded-b-md shadow-lg
+              bg-white dark:bg-gray-700
+              border-x border-b border-gray-300 dark:border-gray-500
+            `}
+          >
+            {availableThemes.map((theme) => (
+              <li
+                key={theme}
+                onClick={() => handleThemeSelect(theme)}
+                className={`
+                  px-4 py-2 cursor-pointer
+                  hover:bg-gray-100 dark:hover:bg-gray-600
+                  ${currentTheme === theme ? 'font-bold bg-gray-200 dark:bg-gray-500' : ''}
+                `}
+                role="option"
+                aria-selected={currentTheme === theme}
+              >
+                {themeClasses[theme].name}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </>
   );
 };
 
