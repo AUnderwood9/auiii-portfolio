@@ -6,7 +6,23 @@
     cursor: pointer;
 }
 
-#theme-selector:focus,
-#theme-selector:focus-visible {
-    outline: none;
+.theme-shadow-default {
+    box-shadow: 0 0 12px 0px rgba(54, 69, 79, 0.6);
+}
+
+.theme-shadow-dark {
+    box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.6);
+}
+
+.theme-shadow-light {
+    box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.6);
+}
+
+.theme-shadow-purple {
+    box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.6);
+}
+
+
+.theme-shadow {
+    box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.4);
 }

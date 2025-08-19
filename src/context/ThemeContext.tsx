@@ -5,6 +5,7 @@ interface ThemeClass {
     header: string;
     primary: string;
     secondary: string;
+    themeSelector: string;
 }
 
 export type AvailableThemes = keyof typeof themeClasses;
@@ -35,12 +36,14 @@ export const themeClasses = {
         header: 'bg-[#2d2d30] text-gray-300',
         primary: 'bg-gray-900 text-white',
         secondary: 'bg-gray-800 text-white',
+        themeSelector: 'theme-shadow-default text-black'
     },
     dark: {
         name: 'Dark',
         header: 'bg-gray-900 text-white',
         primary: 'bg-gray-800 text-white',
         secondary: 'bg-gray-700 text-white',
+        themeSelector: 'theme-shadow-dark text-black'
     },
     light: {
         name: 'Light',
@@ -48,12 +51,14 @@ export const themeClasses = {
         header: 'bg-stone-100 text-black',
         primary: 'bg-white text-black',
         secondary: 'bg-gray-200 text-black',
+        themeSelector: 'theme-shadow-light text-black'
     },
     purple: {
         name: 'Purple',
         header: 'bg-purple-900 text-white',
         primary: 'bg-purple-600 text-white',
         secondary: 'bg-purple-500 text-white',
+        themeSelector: 'theme-shadow-purple text-black'
     },
 }
 

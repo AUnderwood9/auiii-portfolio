@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const ThemeSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { currentTheme, setTheme } = useTheme();
+  const { currentTheme, setTheme, themeClass } = useTheme();
   const availableThemes = Object.keys(themeClasses) as AvailableThemes[];
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -38,7 +38,8 @@ const ThemeSelector: React.FC = () => {
           bg-white dark:bg-gray-700
           border border-gray-300 dark:border-gray-500
           flex items-center justify-between
-          ${isOpen ? 'rounded-t-md' : 'rounded-md shadow-sm'}
+          ${themeClass.themeSelector}
+          ${isOpen ? 'rounded-t-md' : 'rounded-md'}
         `}
         aria-haspopup="true"
         aria-expanded={isOpen}
