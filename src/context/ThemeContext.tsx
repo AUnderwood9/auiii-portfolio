@@ -48,7 +48,7 @@ export const themeClasses = {
     light: {
         name: 'Light',
         // header: 'bg-neutral-100 text-black',
-        header: 'bg-stone-100 text-black',
+        header: 'bg-neutral-100 text-black',
         primary: 'bg-white text-black',
         secondary: 'bg-gray-200 text-black',
         themeSelector: 'theme-shadow-light text-black'
