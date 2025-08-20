@@ -27,13 +27,13 @@ const SideNavigation: React.FC<SideNavigationProps> = ({
     <>
       {isOpen && (
         <div 
-          className="md:hidden fixed left-0 right-0 top-16 bottom-0 bg-black bg-opacity-50 z-40"
+          className="md:hidden fixed left-0 right-0 top-16 bottom-0 bg-black bg-opacity-50 z-[7]"
           onClick={onClose}
         />
       )}
       
       <div className={`
-        ${themeClass.secondary} w-48 md:w-64 flex flex-col z-50
+        ${themeClass.secondary} w-48 md:w-64 flex flex-col z-[8]
         md:relative md:translate-x-0 md:h-auto
         fixed left-0 h-full transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0 top-16' : '-translate-x-full'}
