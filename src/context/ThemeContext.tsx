@@ -6,6 +6,8 @@ interface ThemeClass {
   primary: string;
   secondary: string;
   themeSelector: string;
+  themseSelectorList: string;
+  themeSelectorItem: string;
 }
 
 export type AvailableThemes = keyof typeof themeClasses;
@@ -37,13 +39,17 @@ export const themeClasses = {
     primary: "bg-gray-900 text-white",
     secondary: "bg-gray-800 text-white",
     themeSelector: "theme-shadow-default text-black",
+    themseSelectorList: "bg-gray-900 text-white",
+    themeSelectorItem: "hover:bg-gray-800 text-white",
   },
   dark: {
     name: "Dark",
     header: "bg-gray-900 text-white",
     primary: "bg-gray-800 text-white",
     secondary: "bg-gray-700 text-white",
-    themeSelector: "theme-shadow-dark text-black",
+    themeSelector: "theme-shadow-dark text-black bg-gray-800 text-white",
+    themseSelectorList: "bg-gray-800 text-white",
+    themeSelectorItem: "hover:bg-gray-700 text-white",
   },
   light: {
     name: "Light",
@@ -51,14 +57,18 @@ export const themeClasses = {
     header: "bg-neutral-100 text-black",
     primary: "bg-white text-black",
     secondary: "bg-gray-200 text-black",
-    themeSelector: "theme-shadow-light text-black",
+    themeSelector: "theme-shadow-light text-black bg-white",
+    themseSelectorList: "bg-white text-black",
+    themeSelectorItem: "hover:bg-gray-200 text-black",
   },
   purple: {
     name: "Purple",
     header: "bg-purple-900 text-white",
     primary: "bg-purple-600 text-white",
     secondary: "bg-purple-500 text-white",
-    themeSelector: "theme-shadow-purple text-black",
+    themeSelector: "theme-shadow-purple text-black bg-purple-600",
+    themseSelectorList: "bg-purple-600 text-white",
+    themeSelectorItem: "hover:bg-purple-500 text-white",
   },
 };
 
