@@ -7,7 +7,7 @@ import {
 
 interface ThemeSelectorProps {
   onClose: () => void;
-  excludeRef?: React.RefObject<HTMLElement>;
+  excludeRef?: React.RefObject<SVGSVGElement>;
 }
 
 const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
@@ -50,26 +50,28 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
 
       <div
         ref={wrapperRef}
-        className={`absolute z-10 w-48 lg:w-80 top-[50vh] lg:top-[1rem] left-1/2 -translate-x-1/2 ${themeClass.themeSelector}`}
+        className={`
+            absolute z-10 w-48 lg:w-80 rounded-t-md
+            top-[50vh] lg:top-[1rem] left-1/2
+            -translate-x-1/2 ${themeClass.themeSelector}
+          `}
         role="listbox"
       >
         <div
           className={`
-                      w-full px-4 py-2 text-left
-                      dark:bg-gray-700
-                      border border-gray-300 dark:border-gray-500
+                      w-full px-4 py-2 text-left rounded-t-md
+                      border-t border-x border-b border-gray-300 dark:border-gray-500
                       flex items-center justify-between
-                      rounded-t-md
-                      ${themeClass.themseSelectorList}
+                      ${themeClass.themeSelectorList}
                     `}
         >
-          <span>{themeClasses[currentTheme].name}</span>
+          {themeClasses[currentTheme].name}
         </div>
 
         <ul
           className={`
                       absolute z-10 w-full rounded-b-md shadow-lg
-                      ${themeClass.themseSelectorList}
+                      ${themeClass.themeSelectorList}
                       border-x border-b border-gray-300 dark:border-gray-500
                     `}
         >
@@ -77,7 +79,11 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
             <li
               key={theme}
               onClick={() => handleThemeSelect(theme)}
-              className={`px-4 py-2 cursor-pointer ${themeClass.themeSelectorItem} ${currentTheme === theme ? "font-bold bg-gray-200 dark:bg-gray-500" : ""}`}
+              className={`
+                  px-4 py-2 cursor-pointer last:rounded-b-md
+                  ${themeClass.themeSelectorItem} 
+                  ${currentTheme === theme ? `font-bold ${themeClass.themeSelected}` : ""}
+                `}
               role="option"
               aria-selected={currentTheme === theme}
             >
