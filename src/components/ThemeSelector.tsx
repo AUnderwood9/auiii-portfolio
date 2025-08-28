@@ -51,7 +51,9 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
       <div
         ref={wrapperRef}
         className={`
-            absolute z-10 w-48 lg:w-80 rounded-t-md
+            absolute z-10 w-48 lg:w-80
+            overflow-hidden border rounded-md
+            border-gray-300 dark:border-gray-500
             top-[50vh] lg:top-[1rem] left-1/2
             -translate-x-1/2 ${themeClass.themeSelector}
           `}
@@ -59,8 +61,7 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
       >
         <div
           className={`
-                      w-full px-4 py-2 text-left rounded-t-md
-                      border-t border-x border-b border-gray-300 dark:border-gray-500
+                      w-full px-4 py-2 text-left border-b border-gray-300 dark:border-gray-500
                       flex items-center justify-between
                       ${themeClass.themeSelectorList}
                     `}
@@ -70,9 +71,8 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
 
         <ul
           className={`
-                      absolute z-10 w-full rounded-b-md shadow-lg
+                      w-full rounded-b-md shadow-lg
                       ${themeClass.themeSelectorList}
-                      border-x border-b border-gray-300 dark:border-gray-500
                     `}
         >
           {availableThemes.map((theme) => (
@@ -80,7 +80,7 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
               key={theme}
               onClick={() => handleThemeSelect(theme)}
               className={`
-                  px-4 py-2 cursor-pointer last:rounded-b-md
+                  px-4 py-2 cursor-pointer
                   ${themeClass.themeSelectorItem} 
                   ${currentTheme === theme ? `font-bold ${themeClass.themeSelected}` : ""}
                 `}
