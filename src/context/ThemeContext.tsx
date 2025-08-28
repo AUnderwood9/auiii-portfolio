@@ -6,8 +6,9 @@ interface ThemeClass {
   primary: string;
   secondary: string;
   themeSelector: string;
-  themseSelectorList: string;
+  themeSelectorList: string;
   themeSelectorItem: string;
+  themeSelected: string;
 }
 
 export type AvailableThemes = keyof typeof themeClasses;
@@ -39,8 +40,9 @@ export const themeClasses = {
     primary: "bg-gray-900 text-white",
     secondary: "bg-gray-800 text-white",
     themeSelector: "theme-shadow-default text-black",
-    themseSelectorList: "bg-gray-900 text-white",
+    themeSelectorList: "bg-gray-900 text-white",
     themeSelectorItem: "hover:bg-gray-800 text-white",
+    themeSelected: "bg-gray-800 text-white",
   },
   dark: {
     name: "Dark",
@@ -48,18 +50,19 @@ export const themeClasses = {
     primary: "bg-gray-800 text-white",
     secondary: "bg-gray-700 text-white",
     themeSelector: "theme-shadow-dark text-black bg-gray-800 text-white",
-    themseSelectorList: "bg-gray-800 text-white",
+    themeSelectorList: "bg-gray-800 text-white",
     themeSelectorItem: "hover:bg-gray-700 text-white",
+    themeSelected: "bg-gray-700 text-white",
   },
   light: {
     name: "Light",
-    // header: 'bg-neutral-100 text-black',
     header: "bg-neutral-100 text-black",
     primary: "bg-white text-black",
     secondary: "bg-gray-200 text-black",
     themeSelector: "theme-shadow-light text-black bg-white",
-    themseSelectorList: "bg-white text-black",
-    themeSelectorItem: "hover:bg-gray-200 text-black",
+    themeSelectorList: "bg-white text-black",
+    themeSelectorItem: "hover:bg-neutral-200 text-black",
+    themeSelected: "bg-neutral-100 text-black",
   },
   purple: {
     name: "Purple",
@@ -67,8 +70,9 @@ export const themeClasses = {
     primary: "bg-purple-600 text-white",
     secondary: "bg-purple-500 text-white",
     themeSelector: "theme-shadow-purple text-black bg-purple-600",
-    themseSelectorList: "bg-purple-600 text-white",
+    themeSelectorList: "bg-purple-600 text-white",
     themeSelectorItem: "hover:bg-purple-500 text-white",
+    themeSelected: "bg-purple-500 text-white",
   },
 };
 
