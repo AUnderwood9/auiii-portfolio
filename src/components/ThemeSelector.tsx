@@ -70,8 +70,7 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
 
         <ul
           className={`
-                      w-full rounded-b-md shadow-lg
-                      ${themeClass.themeSelectorList}
+                      w-full ${themeClass.themeSelectorList}
                     `}
         >
           {availableThemes.map((theme) => (
