@@ -1,6 +1,7 @@
 import React from 'react';
-import { useTabNavBar } from './TabNavBarContext';
+import { useTabNavBar } from '../context/TabNavBarContext';
 import { getRouteByPath } from '../routes/routes';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavIconButtonProps {
   icon: React.ReactNode;
@@ -16,6 +17,7 @@ const NavIconButton: React.FC<NavIconButtonProps> = ({
   isActive = false
 }) => {
   const { openTab } = useTabNavBar();
+  const { themeClass } = useTheme();
 
   const handleClick = () => {
     const route = getRouteByPath(path);
@@ -28,8 +30,8 @@ const NavIconButton: React.FC<NavIconButtonProps> = ({
     <div
       className={`cursor-pointer transition-colors duration-200 ${
         isActive 
-          ? 'bg-gray-600 text-white' 
-          : 'hover:bg-gray-700'
+          ? themeClass.primary
+          : themeClass.secondary
       }`}
       onClick={handleClick}
       title={text}

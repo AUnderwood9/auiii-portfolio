@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             <p>
               Hi there! I'm a <String>full-stack developer</String> with a passion for building 
               <Property> modern web applications</Property>. I specialize in <Function>React</Function>, 
-              <Function>TypeScript</Function>, and <Function>Python</Function>, but I'm always 
+              <Function> TypeScript</Function>, and <Function>Python</Function>, but I'm always 
               excited to <Keyword>learn and experiment with</Keyword> new technologies and tackle challenging problems.
             </p>
           </header>

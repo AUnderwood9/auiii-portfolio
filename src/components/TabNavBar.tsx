@@ -1,12 +1,14 @@
 import React from 'react';
-import { useTabNavBar } from './TabNavBarContext';
+import { useTabNavBar } from '../context/TabNavBarContext';
 import { PlusIcon } from '@heroicons/react/24/outline';
+import { useTheme } from '../context/ThemeContext';
 
 const TabNavBar: React.FC = () => {
     const { openTabs, activeTab, closeTab, setActiveTab, getTabIcon } = useTabNavBar();
+    const { themeClass } = useTheme();
 
     return (
-        <div className="bg-gray-800 border-b border-gray-700 flex items-center min-h-[35px] pr-2">
+        <div className={`${themeClass.secondary} border-b border-gray-700 flex items-center min-h-[35px] pr-2`}>
             {openTabs.length > 0 ? (
                 <div className="flex">
                     {openTabs.map((tab) => {
@@ -16,7 +18,7 @@ const TabNavBar: React.FC = () => {
                             'flex items-center space-x-2',
                             'min-w-[120px] max-w-[200px]',
                             'group hover:bg-gray-650 cursor-pointer',
-                            isActive ? 'bg-gray-600' : 'bg-gray-900'
+                            isActive ? themeClass.primary : themeClass.secondary
                         ].join(' ');
 
                         return (
@@ -28,7 +30,7 @@ const TabNavBar: React.FC = () => {
                                 <div className="w-4 h-4 flex-shrink-0 flex items-center justify-center">
                                     {getTabIcon(tab)}
                                 </div>
-                                <span className="text-sm truncate flex-1 text-white">
+                                <span className="text-sm truncate flex-1">
                                     {tab.text || 'Untitled'}
                                 </span>
                                 {tab.isClosable !== false && (

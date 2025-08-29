@@ -5,7 +5,8 @@ import SideNavigation from './components/SideNavigation.tsx';
 import MainDisplayPane from './components/MainDisplayPane.tsx';
 import Header from './components/Header.tsx';
 import { navigationRoutes } from './routes/routes';
-import { TabNavBarProvider } from './components/TabNavBarContext';
+import { TabNavBarProvider } from './context/TabNavBarContext.tsx';
+import { ThemeProvider } from './context/ThemeContext.tsx';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -23,21 +24,23 @@ function App() {
 
   return (
     <Router>
-      <TabNavBarProvider initialTabs={initialTabs}>
-        <div className="flex flex-col h-screen bg-gray-50">
-          <Header onToggleSidebar={toggleSidebar} />        
-          <div className="flex flex-1 overflow-hidden relative">
-            <SideNavigation 
-              routes={navigationRoutes} 
-              isOpen={isSidebarOpen}
-              onClose={closeSidebar}
-            />
-            <MainDisplayPane>
-              <AppRoutes />
-            </MainDisplayPane>
+      <ThemeProvider>
+        <TabNavBarProvider initialTabs={initialTabs}>
+          <div className="flex flex-col h-screen">
+            <Header onToggleSidebar={toggleSidebar} />        
+            <div className="flex flex-1 overflow-hidden relative">
+              <SideNavigation 
+                routes={navigationRoutes} 
+                isOpen={isSidebarOpen}
+                onClose={closeSidebar}
+              />
+              <MainDisplayPane>
+                <AppRoutes />
+              </MainDisplayPane>
+            </div>
           </div>
-        </div>
-      </TabNavBarProvider>
+        </TabNavBarProvider>
+      </ThemeProvider>
     </Router>
   );
 }
