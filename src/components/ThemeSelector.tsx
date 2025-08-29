@@ -52,8 +52,7 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
         ref={wrapperRef}
         className={`
             absolute z-10 w-48 lg:w-80
-            overflow-hidden border rounded-md
-            border-gray-300 dark:border-gray-500
+            overflow-hidden border-1 border-black rounded-md
             top-[50vh] lg:top-[1rem] left-1/2
             -translate-x-1/2 ${themeClass.themeSelector}
           `}
@@ -61,7 +60,7 @@ const ThemeSelector = ({ onClose, excludeRef }: ThemeSelectorProps) => {
       >
         <div
           className={`
-                      w-full px-4 py-2 text-left border-b border-gray-300 dark:border-gray-500
+                      w-full px-4 py-2 text-left border-b border-black
                       flex items-center justify-between
                       ${themeClass.themeSelectorList}
                     `}
