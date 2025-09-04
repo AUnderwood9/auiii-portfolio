@@ -47,7 +47,7 @@ const About: React.FC = () => {
               Currently, I work as a <Property> Developer</Property> at <String>AutoTec</String>, 
               where I've been since <String>2020</String>. In this role, I specialize in building 
               <Keyword> responsive interfaces</Keyword> using <String>React</String>, 
-              <String> TypeScript</String>, and <String>Tailwind CSS</String> for our clients in the automotive indu  stry. 
+              <String> TypeScript</String>, and <String>Tailwind CSS</String> for our clients in the automotive industry. 
               I also work with <String>Python</String> and <String>AWS Lambdas</String>; 
               while employing other AWS cloud services to build robust applications.
             </p>
@@ -84,10 +84,10 @@ const About: React.FC = () => {
             </h2>
             
             <p>
-                If your interested in connecting, feel free to reach out to me at 
+                If you're interested in connecting, feel free to reach out to me at 
               <Property> <a href="mailto:UnderwoodAndrewIII@gmail.com"> UnderwoodAndrewIII@gmail.com</a></Property>, or connect with me on 
               <Property> <a href="https://www.linkedin.com/in/andrew-underwood-5b796813a/">LinkedIn</a></Property>. You can also view some of
-              the work i've done on my free time at my <Property> <a href="https://github.com/AUnderwood9">GitHub</a></Property> page.
+              the work I've done on my free time at my <Property> <a href="https://github.com/AUnderwood9">GitHub</a></Property> page.
             </p>
           </section>
         </div>
