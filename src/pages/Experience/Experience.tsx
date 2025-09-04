@@ -70,7 +70,7 @@ const Experience: React.FC = () => {
                                     <Property>UI Developer</Property> at <String>BBVA</String>
                                 </h3>
                                 <p className="text-sm opacity-75">
-                                    <Keyword>2019 - 2020</Keyword> | <String>Biringham, Al</String>
+                                    <Keyword>2019 - 2020</Keyword> | <String>Birmingham, Al</String>
                                 </p>
                                 <p>
                                     Developed and maintained <Property>Front End applications</Property> serving millions of users. Collaborated extensively with the UX and business team
@@ -95,7 +95,7 @@ const Experience: React.FC = () => {
                                     <Property>Automation Developer</Property> at <String>BBVA</String>
                                 </h3>
                                 <p className="text-sm opacity-75">
-                                    <Keyword>2018 - 2019</Keyword> | <String>Biringham, Al</String>
+                                    <Keyword>2018 - 2019</Keyword> | <String>Birmingham, Al</String>
                                 </p>
 
                                 <p>
